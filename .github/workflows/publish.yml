@@ -17,7 +17,7 @@ jobs:
       - name: Tag commit
         uses: tvdias/github-tagger@v0.0.1
         with:
-          repo-token: "${{ secrets.GH_TOKEN }}"
+          repo-token: " ${{ secrets.GITHUB_TOKEN }}"
           tag: ${{ env.TAG_NAME }}
 
       - name: Setup Node.js
@@ -32,7 +32,7 @@ jobs:
       - name: Publish all packages
         run: ./scripts/publish.sh latest
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Trigger a new build to ensure Vercel creates a distinct release branch, rather than reusing latest
       - name: Triggering new build

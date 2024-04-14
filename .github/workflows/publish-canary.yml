@@ -31,6 +31,6 @@ jobs:
       - name: Publish all packages
         run: ./scripts/publish.sh canary
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     timeout-minutes: 10

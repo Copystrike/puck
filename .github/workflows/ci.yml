@@ -41,7 +41,7 @@ jobs:
 
       - name: Build Puck
         run: |
-          yarn build --scope @measured/puck --no-deps
+          yarn build --scope @copystrike/puck --no-deps
 
       - name: Build recipe/next
         run: |
